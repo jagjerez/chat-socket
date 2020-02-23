@@ -41,11 +41,11 @@ db.once('open',(s)=>{
 	console.log('conexion abierta') 
 })
 console.log(__dirname + '\\public\\vuejs');
-app.use('/app',express.static(__dirname + '/public/vuejs'));
-app.use('/angular', (req, res) => {
+app.use(express.static(__dirname + '/public/vuejs'));
+/*app.use('/angular', (req, res) => {
 	console.log("aqui")
 	res.sendFile(path.join(__dirname, '/public/angular/index.html'))
-  })
+  })*/
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Headers", "*");
